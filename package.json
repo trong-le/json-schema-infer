@@ -4,7 +4,7 @@
   "description": "Infer a table schema from a json stream.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node -r babel-register -r babel-polyfill -r dotenv/config test/test.js | faucet",
+    "test": "node -r babel-register -r babel-polyfill test/test.js | faucet",
     "tail": "tail -f app.log | bunyan -o short"
   },
   "author": "Alois Barreras <alois@astronomer.io>",
