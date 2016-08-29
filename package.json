@@ -1,22 +1,25 @@
 {
-    "name": "json-schema-infer",
-    "version": "1.0.0",
-    "description": "Infer a table schema from a json stream.",
-    "main": "lib/index.js",
-    "scripts": {
-        "test": "node -r babel-register -r babel-polyfill -r dotenv/config test/test.js | faucet" 
-    },
-    "author": "Alois Barreras <alois@astronomer.io>",
-    "license": "MIT",
-    "dependencies": {
-        "babel-plugin-transform-decorators-legacy": "^1.3.4",
-        "babel-polyfill": "^6.13.0",
-        "babel-preset-es2015": "^6.14.0",
-        "babel-preset-stage-3": "^6.11.0",
-        "babel-register": "^6.14.0",
-        "blue-tape": "^0.2.0",
-        "bunyan": "^1.8.1",
-        "faucet": "0.0.1",
-        "highland": "^3.0.0-beta.2"
-    }
+  "name": "json-schema-infer",
+  "version": "1.0.0",
+  "description": "Infer a table schema from a json stream.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node -r babel-register -r babel-polyfill -r dotenv/config test/test.js | faucet"
+  },
+  "author": "Alois Barreras <alois@astronomer.io>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-3": "^6.11.0",
+    "babel-register": "^6.14.0",
+    "blue-tape": "^0.2.0",
+    "bunyan": "^1.8.1",
+    "faucet": "0.0.1",
+    "highland": "^3.0.0-beta.2"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0"
+  }
 }
