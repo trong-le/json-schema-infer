@@ -5,7 +5,7 @@ export default {
         dt: 'character varying',
         priority: 0,
     },
-    'decimal': {
+    'number': {
         fn: 'decimal',
         args: [20, 5],
         dt: 'numeric',
