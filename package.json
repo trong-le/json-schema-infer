@@ -2,8 +2,9 @@
   "name": "json-schema-infer",
   "version": "1.0.0",
   "description": "Infer a table schema from a json stream.",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel lib -d dist",
     "test": "node -r babel-register -r babel-polyfill test/test.js | faucet",
     "tail": "tail -f app.log | bunyan -o short"
   },
@@ -21,6 +22,7 @@
     "highland": "^3.0.0-beta.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.14.0",
     "dotenv": "^2.0.0"
   }
 }
