@@ -11,7 +11,13 @@ test('test infers schema for redshift', async t => {
     const options = { dataTypes: dataTypes };
     const infer = new Infer(options);
     const inferredSchema = await infer.infer(highlandStream);
-    const expectedSchema = [ { name: 'foo', type: 'string' }, { name: 'testFloat', type: 'number' }, { name: 'testInt', type: 'integer' }];
+    const expectedSchema = [ 
+        { name: 'my_test_data_id', type: 'integer' }, 
+        { name: 'name', type: 'string' }, 
+        { name: 'test_int', type: 'integer' } , 
+        { name: 'test_date', 'type': 'string' }, 
+        { 'name': 'test_float', 'type': 'decimal'} 
+    ];
     t.deepEqual(inferredSchema, expectedSchema);
 });
 
