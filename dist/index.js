@@ -18,25 +18,23 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var JSONSchemaInfer = function () {
-    function JSONSchemaInfer(options) {
+    function JSONSchemaInfer() {
         _classCallCheck(this, JSONSchemaInfer);
-
-        this.dataTypes = options.dataTypes;
     }
-
-    /*
-     * infer will output an array containing the columns of the inferred schema from the stream. it should look like this.
-     *
-     * const incomingSchema = [
-     * { name: 'foo', type: 'integer' },
-     * { name: 'bar', type: 'string' } ];
-     *
-     * the 'type' fields will be different depending on the 'client' value supplied at the constructor
-     */
-
 
     _createClass(JSONSchemaInfer, [{
         key: 'infer',
+
+
+        /*
+         * infer will output an array containing the columns of the inferred schema from the stream. it should look like this.
+         *
+         * const incomingSchema = [
+         * { name: 'foo', type: 'integer' },
+         * { name: 'bar', type: 'string' } ];
+         *
+         * the 'type' fields will be different depending on the 'client' value supplied at the constructor
+         */
         value: function infer(stream) {
             var _this = this;
 
@@ -78,20 +76,17 @@ var JSONSchemaInfer = function () {
                             type = 'string';
                         }
 
-                        // map the generic type to a specifc type for the destination
-                        var inferredType = _this.dataTypes[type].fn;
-
                         // if we don't already have it, and there is a hint, return the hint
                         if (!existingField && hintedField) {
                             return hintedField;
                         }
 
-                        // if we have already have it, and there is an inferredType, check if we should change the the value
+                        // if we have already have it, and there is an type, check if we should change the the value
                         // this is useful if the initial inference was an integer, but the column contains floats so we need
                         // to change the column type to a decimal representation
                         if (existingField && type) {
                             if (_this.shouldChangeType(existingField.type, type)) {
-                                existingField.type = inferredType;
+                                existingField.type = type;
                                 return;
                             }
                         }
