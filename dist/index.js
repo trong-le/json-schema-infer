@@ -90,7 +90,7 @@ var JSONSchemaInfer = function () {
                         // this is useful if the initial inference was an integer, but the column contains floats so we need
                         // to change the column type to a decimal representation
                         if (existingField && type) {
-                            if (_this.shouldChangeType(existingField.type, inferredType)) {
+                            if (_this.shouldChangeType(existingField.type, type)) {
                                 existingField.type = inferredType;
                                 return;
                             }
