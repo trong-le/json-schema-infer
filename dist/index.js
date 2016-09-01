@@ -26,14 +26,14 @@ var JSONSchemaInfer = function () {
         key: 'infer',
 
 
-        /*
-         * infer will output an array containing the columns of the inferred schema from the stream. it should look like this.
+        /**
+         * Infer will output an array containing the columns of the inferred schema from the stream. it should look like this.
          *
          * const incomingSchema = [
          * { name: 'foo', type: 'integer' },
          * { name: 'bar', type: 'string' } ];
          *
-         * the 'type' fields will be different depending on the 'client' value supplied at the constructor
+         * the 'type' fields will be different depending on the 'client' value supplied at the constructor.
          */
         value: function infer(stream) {
             var _this = this;
