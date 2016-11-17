@@ -8,13 +8,15 @@ test('test infers schema for redshift', async t => {
     // the stream always throws an unexpected end of input error, just ignore it till we figure out how to fix it
     const highlandStream = _(readStream).split().map(JSON.parse).errors(err => {});
     const infer = new Infer();
-    const inferredSchema = await infer.infer(highlandStream);
-    const expectedSchema = [ 
-        { name: 'my_test_data_id', type: 'integer' }, 
-        { name: 'name', type: 'string' }, 
-        { name: 'test_int', type: 'integer' } , 
-        { name: 'test_date', 'type': 'string' }, 
-        { 'name': 'test_float', 'type': 'number'} 
+    const inferredSchema = await infer.infer(highlandStream, [{ name: 'time', type: 'time'}]);
+    const expectedSchema = [
+        { name: 'my_test_data_id', type: 'integer' },
+        { name: 'name', type: 'string' },
+        { name: 'test_int', type: 'integer' } ,
+        { name: 'test_date', 'type': 'string' },
+        { 'name': 'test_float', 'type': 'number'},
+        { name: 'time', type: 'time'},
+        { name: 'date', type: 'date'}
     ];
     t.deepEqual(inferredSchema, expectedSchema);
 });
