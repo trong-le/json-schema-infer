@@ -1,1 +1,0 @@
-[{"name":"my_test_data_id","type":"integer"},{"name":"name","type":"string"},{"name":"test_int","type":"integer"},{"name":"test_date","type":"string"},{"name":"test_float","type":"number"},{"name":"time","type":"time"},{"name":"date","type":"date"}]
